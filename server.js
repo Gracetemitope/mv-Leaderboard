@@ -7,7 +7,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 /* eslint-enable */
 
 const app = express();
-const config = require('./webpack.config.js');
+const config = require('./webpack.config');
 
 const compiler = webpack(config);
 

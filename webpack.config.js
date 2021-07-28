@@ -1,15 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const StylelintPlugin = require('stylelint-webpack-plugin');
-// const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-  /* eslint-disable */
-
-  // plugins: [new StylelintPlugin()],
-  // plugins: [new ESLintPlugin()],
-  /* eslint-enable */
-
   mode: 'development',
   entry: {
     index: './src/index.js',
@@ -18,7 +10,6 @@ module.exports = {
   devServer: {
     contentBase: './dist',
   },
-  /* eslint-disable */
 
   plugins: [
     new HtmlWebpackPlugin({
@@ -26,7 +17,6 @@ module.exports = {
       template: './src/index.html',
     }),
   ],
-  /* eslint-enable */
 
   output: {
     filename: '[name].bundle.js',
