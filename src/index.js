@@ -11,7 +11,7 @@ function getAllScores() {
       .then(resolve);
   });
 }
-export default async function getScores() {
+async function getScores() {
   const setVal = await getAllScores();
   return setVal;
 }
@@ -20,7 +20,7 @@ refreshBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const resultJSON = getScores();
   resultJSON.then((data) => {
-    console.log(data.result);
+    leaderBoard.innerHTML = '';
     data.result.forEach((element) => {
       const p = document.createElement('p');
       p.innerText = `${element.user}: ${element.score}`;
@@ -49,7 +49,6 @@ function fetchData(userName, scorePoint) {
 
 document.getElementById('leader-board').addEventListener('submit', (e) => {
   e.preventDefault();
-  console.log('clicked');
   const nameInput = document.getElementById('name_input').value;
   const scoreInput = document.getElementById('score_input').value;
   fetchData(nameInput, scoreInput);
@@ -57,4 +56,5 @@ document.getElementById('leader-board').addEventListener('submit', (e) => {
   board.innerHTML = `${nameInput}  ${scoreInput}`;
 
   leaderBoard.appendChild(board);
+  document.getElementById('leader-board').reset();
 });
