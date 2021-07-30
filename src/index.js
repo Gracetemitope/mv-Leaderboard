@@ -1,7 +1,7 @@
 import './style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 let refreshBtn = document.getElementById('refresh_btn')
-const leaderBoard = document.getElementById("leader-board")
+const leaderBoard = document.getElementById("leader-list")
 
 function getAllScores() {
   return new Promise((resolve) => {
