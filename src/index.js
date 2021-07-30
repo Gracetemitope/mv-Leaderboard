@@ -23,7 +23,7 @@ refreshBtn.addEventListener('click', (e) => {
     leaderBoard.innerHTML = '';
     data.result.forEach((element) => {
       const p = document.createElement('p');
-      p.innerText = `${element.user}: ${element.score}`;
+      p.innerHTML = `<p class="mr-3">${element.user}: ${element.score}<p>`;
       leaderBoard.appendChild(p);
     });
   });
@@ -53,7 +53,7 @@ document.getElementById('leader-board').addEventListener('submit', (e) => {
   const scoreInput = document.getElementById('score_input').value;
   fetchData(nameInput, scoreInput);
   const board = document.createElement('p');
-  board.innerHTML = `${nameInput}  ${scoreInput}`;
+  board.innerHTML = `<p class="mr-3">${nameInput}:  ${scoreInput}</p>`;
 
   leaderBoard.appendChild(board);
   document.getElementById('leader-board').reset();
